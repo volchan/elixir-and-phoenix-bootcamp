@@ -1,10 +1,11 @@
 defmodule Identicon do
   def main(input) do
     input
-    |> hash_inpit
+    |> hash_input
   end
 
-  defp hash_inpit(input) do
-    
+  def hash_input(input) do
+    :crypto.hash(:md5, input)
+    |> :binary.bin_to_list
   end
 end
